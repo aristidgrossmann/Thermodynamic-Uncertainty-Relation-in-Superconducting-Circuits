@@ -1,0 +1,210 @@
+\documentclass[11pt,a4paper]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Package loading.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% name
+\newcommand\nm{your name}
+% title
+\newcommand\ttl{your title}
+% type of document
+\newcommand\tp{master's thesis}
+
+\usepackage[ngerman,english]{babel}
+\usepackage{a4}
+\usepackage{graphicx,color}
+
+
+% [1-4] citing
+\usepackage{cite}
+
+% is this still needed?
+\makeatletter
+\def\NAT@parse{\typeout{This is a fake Natbib command to fool Hyperref.}}
+\makeatother
+
+
+\usepackage[%
+  bookmarks=true,%
+  bookmarksopen=true,%
+  bookmarksnumbered=true,%    
+  pdfauthor={\nm},% 
+  pdftitle={\ttl},%
+  pdfsubject={\tp}%
+  ,pdfstartview=FitH%
+]{hyperref}
+
+
+%package for calculation length
+\usepackage{calc}
+
+%bookmarks the content, list of figures, ...
+\usepackage[nottoc,notlof,notlot]{tocbibind}
+
+
+%ams marcros
+\usepackage{amsmath,amsfonts,amssymb}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% a value to play around in order to get a better float distribution
+% value between: 0.5 and 0.8
+% standard value: 0.5
+\renewcommand\floatpagefraction{.6}
+
+
+%Boxes around formulas
+\setlength{\fboxsep}{3mm}
+
+%labels
+\renewcommand\theequation{\thechapter.\arabic{equation}}
+\renewcommand\theenumi{\roman{enumi})}
+\renewcommand\labelenumi{\theenumi}
+
+
+%Special functions for physical quantities
+\newcommand\ket[1]{\lvert#1\rangle} 
+\newcommand\bra[1]{\langle#1\rvert}
+\newcommand\bracket[2]{\langle#1\mid#2\rangle} 
+\newcommand\av[1]{\left\langle#1\right\rangle}
+\newcommand\cum[1]{\left\langle\left\langle#1\right\rangle\right\rangle}
+\newcommand\abs[1]{\left\lvert#1\right\rvert}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\newcommand\where[1]{\,\Big\vert_{#1}}
+\renewcommand\epsilon{\varepsilon}
+
+\DeclareMathOperator\A{A}
+\DeclareMathOperator\tr{tr}
+\DeclareMathOperator\sign{sign}
+\renewcommand\O{\operatorname{\mathcal{O}}}
+\renewcommand\Re{\operatorname{Re}}
+\renewcommand\Im{\operatorname{Im}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Titlepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\frontmatter
+
+\currentpdfbookmark{Title Page}{title}
+\begin{titlepage}
+\mbox{}
+\vspace{\stretch{1.5}}
+  \begin{center}
+    \huge
+    \textbf{\ttl}
+    \vspace{15mm}
+    
+    \LARGE\tp
+    \vspace{30mm}
+    
+    \normalsize
+    presented by\\
+    \bigskip
+    {\large \nm}\\
+    \medskip
+    \emph{address}\\
+    \vspace{15mm} 
+    
+    under the supervision of\\
+    \bigskip
+    {\large supervisor}\\
+    \smallskip
+    and\\
+    \smallskip
+    {\large 2nd supervisor}\\
+    \medskip
+    \emph{institute}\\
+    \vspace{30mm} 
+
+    date
+  \end{center}
+\vspace{\stretch{0.5}}
+\end{titlepage}
+
+%declaration
+\cleardoublepage 
+\thispagestyle{empty}\markboth{}{}
+
+\selectlanguage{ngerman} 
+\noindent 
+
+Ich versichere, dass ich die vorliegende Arbeit selbstst"andig verfasst und
+keine anderen als die angegebenen Quellen und Hilfsmittel benutzt sowie Zitate
+kenntlich gemacht habe.
+
+\vspace{10mm}
+
+Aachen, den \today
+
+
+\vspace{15mm}
+
+\nm
+
+\selectlanguage{english}
+
+%Abstract
+\chapter[Abstract]{\centerline{Abstract}}
+
+\begin{quote}
+  \em
+  abstract
+\end{quote}
+
+
+
+
+\cleardoublepage
+
+%Contents
+\tableofcontents
+
+%List of figures
+\listoffigures
+
+%List of tables
+\listoftables
+ 
+
+\cleardoublepage 
+\thispagestyle{empty}\markboth{}{}
+
+\vspace*{\stretch{1}} 
+\begin{center} dedication
+\end{center} \vspace*{\stretch{3}}
+
+
+
+\mainmatter
+
+
+\chapter{Introduction}\label{ch:intro}
+
+\backmatter
+
+%Acknoledgements
+\chapter[Acknowledgements]{\centerline{Acknowledgements}}
+
+\begin{quote}
+  \em  acknowledge
+\end{quote}
+
+
+\bibliographystyle{aip}
+\bibliography{refs}
+
+
+\end{document}
