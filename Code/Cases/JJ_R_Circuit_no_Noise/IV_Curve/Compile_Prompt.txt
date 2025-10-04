@@ -1,0 +1,3 @@
+g++ -I../../../SDE_Solver/include ../../../SDE_Solver/src/SDE_Solver.cpp  JJ_R_Circuit_no_Noise_IV.cpp -o JJ_R_Circuit_no_Noise_IV.exe
+
+.\JJ_R_Circuit_no_Noise_IV.exe
