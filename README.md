@@ -1,1 +1,1 @@
-This project contains the code, literature, notes and the final paper and presentation slides of my physics bachelor thesis
+Euler-Maruyama solver (MC) and Fokker-Planck (PDF) Finite-Volume-solver for solving the overdamped Langevin eq, as well as auxiliary functions for plotting and evaluating arising integrals. Also contains PDFs from literature, notes and the final paper and presentation slides of my physics bachelor thesis
